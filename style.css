@@ -8,62 +8,93 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
-h1,
+h1{
+    margin-bottom: 100px;
+}
 h2{
-    margin-top: 150px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    font-size: 2em;
 }
 #demarrer{
+    width: 200px;
     font-size: 20px;
+    font-weight:bolder;
     color: black;
-    background-color:aliceblue;
-    border: 2px solid black;
-    padding: 4px 8px;
+    background-color:rgb(253, 209, 250);
+    padding: 20px;
+    border-radius: 50px;
+    border : none;
+}
+#demarrer:hover,
+#suivant:hover,
+#redémarrer:hover{
+    background-color: rgb(212, 33, 200);
 }
 #reponses{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
-.answer-btn{
+#reponses button{
     border: none;
-    width: 350px;
-    font-size: 18px;
+    border-radius: 50px;
+    width: 400px;
+    font-size: 1.5rem;
     color: black;
-    background-color:rgb(247, 232, 247);
+    background-color:rgb(253, 209, 250);
     outline: none;
-    padding: 6px ;
+    padding: 16px ;  
     text-align: start;
     cursor: pointer;
 }
 #suivant{
-    font-size: 1.2em;
+    font-size: 1.5em;
     display: none;
-    width: 70px;
+    width: 150px;
     margin-top: 30px;
     outline: none;
     border: none;
-    padding: 4px;
-    background-color: rgb(234, 102, 234);
+    padding: 8px;
+    background-color: rgb(253, 221, 251);
     cursor: pointer;
+    border-radius: 50px;
 }
+
 .answer_correct{
-    border: 4px solide;
-    border-color: green;
-    background-color:rgba(0, 255, 0, 0.5)
+    width: 400px;
+    background-Color : rgb(92, 239, 92);
+}
+.answer_bad{
+    background-Color : rgb(239, 92, 92);
+}
+#score_suivant{
+    width: 390px;
+    display: flex;
+    justify-content: space-between;
 }
 #score{
-    font-size: 1.5em;
+    font-size: 2em;
+    margin-top: 30px;
+}
+#finale_score{
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+#niveau{
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 #redémarrer{
     font-size: 1.2em;
-    width: 115px;
+    width: 180px;
     margin-top: 30px;
     outline: none;
     border: none;
-    padding: 4px;
-    background-color: rgb(234, 102, 234);
+    padding: 10px;
+    background-color: rgb(253, 209, 250);
     cursor: pointer;
+    border-radius: 50px;
 }
-

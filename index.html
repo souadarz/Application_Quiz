@@ -4,110 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Une application web interactive pour évaluer les compétences en français des utilisateurs à travers un quiz basé sur le TCF. Testez votre niveau, obtenez un score">
     <title>quiz</title>
 </head>
 <body>
     <h1>Test de Connaissance du Français</h1>
     <button id="demarrer" onclick="depart()">Démarrer le quiz</button>
 
-    <script> 
-        let score_valeur = 0
-        let index = 0
-        let questions = [
-            {
-                question : "Quel est le synonyme de sincère ?",
-                reponses : ["Hypocrite", "Honnête", "méfiant", "Retenu"],  
-                reponse_correct : "Honnête"
-            },
-            {
-                question : "Quel est le synonyme de rapide",
-                reponses : ["Lent", "Vif", "Doucement", "Tard"],    
-                reponse_correct : "Vif"
-            },
-            {
-                question : "Quel est le synonyme de facile ?",
-                reponses : ["difficile", "dur", "simple", "complexe"],  
-                reponse_correct : "simple"
-            },
-            {
-                question : "Quel est l'antonyme de facile ?",
-                reponses : ["difficile", "dur", "simple", "complexe"],  
-                reponse_correct : "difficile"
-            }
-        ]
-        function depart(){
-            document.body.innerHTML = `
-            <h2 id="question"></h2>
-            <div id="reponses"></div>
-            <button id="suivant">Suivant</button>
-            <p id="score">Score : ${score_valeur}</p>
-            `
-            // afficher()
-            // question_suivante()
-            // }
-            // function afficher(){
-        
-            document.querySelector("#question").textContent = questions[index].question
-            const rep = document.getElementById("reponses")
-            questions[index].reponses.forEach(reponse => {
-                const rep_button = document.createElement("button");
-                rep_button.innerHTML = `<p class = "answer-btn">${reponse}</p>`;
-                // rep_button.classList.add("answer")
-                rep_button.addEventListener('click', () =>{
-                    if (reponse === questions[index].reponse_correct) {
-                        score_valeur = score_valeur + 1
-                        document.getElementById("score").innerText = "Score :" + score_valeur;
-                        // console.log(score_valeur)
-                        rep_button.classList.add("answer_correct");
-                        // rep_button.style.backgroundColor = "rgba(0, 255, 0, 0.5)|transparant"
-                    } 
-                    else {
-                    }
-                    document.getElementById("suivant").style.display = "block";
-                    question_suivante()
-                }, {once : true})
-                rep.appendChild(rep_button);
-            })
-            // question_suivante()
-        }
-        function question_suivante(){
-            document.getElementById("suivant").addEventListener('click', () =>{
-                index++;
-                if(index < questions.length){
-                    // document.body.innerHTML = '';
-                    depart();
-                }
-                else{
-                    quiz_terminer();
-                }
-            })
-        }
-        function quiz_terminer(){
-            let niveau_estimé 
-            document.body.innerHTML = `
-            <h3 id="finale_score">Votre score est de : ${score_valeur} sur 10</h3>
-            <p id="niveau">Votre Niveau est de : ${niveau_estimé}</p>
-            <button id="redémarrer">Redémarrer</button>
-                `
-            if(score_valeur <= 2){
-                niveau_estimé = "A1"}
-            else if(score_valeur > 2 && score_valeur <= 4){
-                niveau_estimé = "A2" }
-            else if(score_valeur > 4 && score_valeur <= 6){
-                niveau_estimé = "B1"}
-            else if(score_valeur > 6 && score_valeur <= 8){
-                niveau_estimé = "B2" }   
-            document.getElementById("niveau").innerText = "Votre Niveau est de : " + niveau_estimé
-            document.getElementById("redémarrer").addEventListener('click', ()=>{
-                document.body.innerHTML = `
-                <h1>Test de Connaissance du Français</h1>
-                <button id="demarrer" onclick="depart()">Démarrer le quiz</button>
-                `
-                score_valeur = 0;
-                index = 0;
-            })
-        }
-    
-    </script>
+     <script src="script.js"></script>
 </body>
 </html>
