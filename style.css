@@ -63,13 +63,13 @@ h2{
     border-radius: 50px;
 }
 
-.answer_correct{
+/* .answer_correct{
     width: 400px;
     background-Color : rgb(92, 239, 92);
 }
 .answer_bad{
     background-Color : rgb(239, 92, 92);
-}
+} */
 #score_suivant{
     width: 390px;
     display: flex;

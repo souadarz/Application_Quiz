@@ -3,12 +3,12 @@ let index = 0;
 let questions = [
     {
         question : "Quel est le synonyme de sincère ?",
-        reponses : ["Hypocrite", "Honnête", "méfiant", "Retenu"],  
+        reponses : ["Hypocrite", "Honnête", "méfiant", "Retenu"],
         reponse_correct : "Honnête"
     },
     {
         question : "Quel est le synonyme de rapide",
-        reponses : ["Lent", "Vif", "Doucement", "Tard"],    
+        reponses : ["Lent", "Vif", "Doucement", "Tard"],
         reponse_correct : "Vif"
     },
     {
@@ -99,6 +99,8 @@ function quiz_terminer(){
        
         document.getElementById("redémarrer").addEventListener('click', ()=>{
             document.body.innerHTML = `
+            ${(localStorage.getItem("score_finale"))? `<h2>votre dernier score est : ${localStorage.getItem("score_finale")} sur 10</h2>` : ""}
+            <h1>Institut Balzac<h1>
             <h1>Test de Connaissance du Français</h1>
             <button id="demarrer" onclick="depart()">Démarrer le quiz</button>
             `
